@@ -1,0 +1,294 @@
+// Import Global Rules
+@use "SASS/Global-Rules" as *;
+
+// Import my variables
+@use "SASS/Vars" as *;
+
+// Main titles like (about-us, our-services...etc)
+.main-title{
+    color: $alt_color;
+}
+
+// All Paragraphs in page 
+.my-p{
+        line-height: 2.1;
+        text-align: justify;
+}
+
+// Header
+// Navbar
+.my-nav{
+    // This box-shadow from this website: https://getcssscan.com/css-box-shadow-examples
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+.nav-title{
+    color: $main_color;
+    transition: $main_transition;
+    &:hover{
+        color: $main_color;
+    }
+    .nav-media{
+        color: $secondary_color;
+    }
+}
+
+.list{
+    li{
+        transition: $main_transition;
+        &:hover{
+            background-color: $main_color;
+        }
+    }
+
+    .quote{
+        transition: $main_transition;
+    }
+}
+// Landing
+.landing{
+    // height: 900px;
+    padding: 200px 0;
+    background-image: url(../Images/landing-bg2.jpg);
+    background-position: center;
+    .content{
+        
+        .digital{
+            color: $alt_color;
+            letter-spacing: -1px;
+        }
+
+        .landing-p{
+            line-height: 1.8;
+            text-align: justify;
+        }
+    }
+}
+
+// About
+.about{
+        & > a{
+            color: $alt_color;
+        }
+
+    .parent-circle{
+        // Circular progress bar
+        .content{
+            position: relative;
+            width: 180px;
+            height: 180px;
+            display: flex;
+            border-radius: 50%;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            &.first{
+            background: conic-gradient(#0099e5 calc((var(--width) / 100) * 360deg), #ededed 0deg);
+            }
+            &.second{
+            background: conic-gradient(#7552cc calc((var(--width) / 100) * 360deg), #ededed 0deg);
+            }
+            &.third{
+            background: conic-gradient(#ff9933 calc((var(--width) / 100) * 360deg), #ededed 0deg);
+            }
+
+            &::before{
+                content: "";
+                position: absolute;
+                height: 170px;
+                width: 170px;
+                border-radius: 50%;
+                background-color: white;
+            }
+        }
+    }
+}
+// About
+
+// Services
+.services{
+        background-image: url("/Images/service-bg.jpg");
+        background-size: cover;
+        background-position: top;
+    .about-Provide{
+        color: $alt_color;
+    }
+
+    .hover-box{
+        border-radius: 12px;
+        transition: $main_transition;
+        
+        & > span{
+            transition: $main_transition;
+        }
+        &:hover{
+            background-color: $alt_color;
+          box-shadow: #0099e5 0px 30px 60px -12px inset, black 0px 18px 36px -18px inset;
+          & > span{
+            color:white;
+          }
+        }
+    }
+
+    .serv-box{
+        background-color: white;
+        border: 2px solid #ededed;
+        padding: 60px;
+        border-radius: 10px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    }
+
+    .check-boxes{
+        .box svg{
+            color: $alt_color;
+        }
+    }
+
+}
+// Services
+
+// Quote
+.my-quote{
+    width: 100%;
+    height: 500px;
+    background-image: url("../Images/quote-bg.jpg");
+    background-size: cover;
+    background-size: cover;
+    background-position: right;
+
+    .inputs{
+        border-radius: 70px;
+        background-color: white;
+        
+        & > input:not(.input-sub){
+            border: none;
+            padding: 25px 60px;
+            font-size: 20px;
+            outline: none;
+            background-color: transparent;
+        }
+
+        .input-sub{
+            background-color: $main_color;
+            border: none;
+            padding: 0 100px;
+            border-bottom-right-radius: 50px;
+            border-top-right-radius: 50px;
+            outline: none;
+
+            &:hover{
+            background-color: $alt_color;
+            }
+        }
+        @media (max-width:991px) {
+            & > input:not(.input-sub){
+                padding: 20px 50px;
+            }
+
+            .input-sub{
+                padding: 20px 30px;
+             }
+        }
+        
+        @media (max-width:767px) {
+            &{
+                border-radius: 5px;
+            }
+            
+            & > input:not(.input-sub){
+                padding: 20px 50px;
+            }
+
+            .input-sub{
+                border-radius: 0;
+                margin: 10px;
+             }
+        }
+        
+    }
+}
+// Quote
+
+// portfolio
+.portfolio{
+    background-image: url(../Images/portfolio-right-dec.jpg),url(../Images/portfolio-left-dec.jpg);
+    background-position: right,left;
+    background-repeat: no-repeat;
+    .box{
+        box-shadow: rgba(150, 150, 150, 0.086) 0px -50px 36px -28px inset;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+    }
+}
+// portfolio
+
+
+// news
+.news{
+    background-image: url(../Images/slider-left-dec.jpg);
+    background-position:left;
+    background-repeat: no-repeat;
+
+    .my-box{
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;    
+        border-radius: 20px;
+    }
+
+    .box{
+        img{
+            border-radius: 20px;
+        }
+    }
+}
+// news
+
+
+// contact
+.contact{
+
+    .boxy{
+        border-radius: 20px;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px, rgba(0, 0, 0, 0.22) 0px 10px 10px;
+        background-image: url("../Images/contact-top-right.png"), url("../Images/contact-bottom-right.png");
+        background-repeat: no-repeat;
+        background-position: top right,bottom right;
+
+        .box{
+           box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+            border-radius: 20px;
+        }
+
+        .fields{
+
+            .main-inputs{
+                input{
+                    border: 2px solid #eee;
+                    outline-color: $main_color;
+                    &::placeholder{
+                        color: rgb(147, 147, 147);
+                    }
+                }
+            }
+
+            .textarea-input{
+                textarea{
+                    border: 2px solid #eee;
+                    outline-color: $main_color;
+                    color: rgb(147, 147, 147);
+                    border-radius: 10px;
+                    width: 300px;
+                    height: 250px;
+                }
+            }
+        }
+
+    }
+}
+// contact
+
+// footer
+footer{
+    background-image: url("/Images/footer-bg.jpg");
+    background-size: cover;
+}
+// footer
